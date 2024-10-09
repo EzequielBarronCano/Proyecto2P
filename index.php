@@ -33,5 +33,4 @@ if ($resultado->num_rows > 0)           // Si el resultado es mayor a 0 quiere d
                 . $fila["estado"] . "<br>";
         }
 }
-// Prueba
 ?>
