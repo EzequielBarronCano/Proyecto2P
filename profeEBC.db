@@ -1,0 +1,23 @@
+create database profeEBC;
+use profeEBC;
+
+create table alumno(
+    n_control int primary key auto_increment,
+    nom_al varchar(50) not null default 'NOMBRE',
+    ap_paterno varchar(100) not null default 'AP_PATERNO',
+    ap_materno varchar(100) not null default 'AP_MATERNO',
+    curp varchar(18) not null default 'XAXA500101HQTRNZ01',
+    f_nac_al date not null default'1900-01-01',
+    n_tel_al bigint(10) not null default'9876543210',
+    e_mail varchar(30) not null default 'alumno@email.com',
+    calle varchar(50),
+    num varchar(5),
+    colonia varchar(50),
+    municipio varchar(50),
+    estado varchar(50)
+);
+
+insert into alumno values(0, 'Carlos', 'Montes', 'Juarez', 'XAXA500101HQTRNZ01', '2008-05-03', 1234567890, 'montes.c@hotmail.com', 'Independencia', '45', 'Revolucion', 'Tequisquiapan', 'Queretaro'),
+                         (0, 'Diana', 'Jimenez', 'Rojas', 'XAXA600101HQTRNZ01', '2008-09-23', 3324567800, 'jimenez.d@yahoo.com', 'Aldama', '12A', 'El Chamizal', 'Pedro Escobedo', 'Queretaro'),
+                         (0, 'Xavier', 'Lopez', 'Chabelo', 'XAXA700101HQTRNZ01', '2007-11-21', 9845327690, 'lopez.x@gmail.com', 'Nacozari', '143', 'Mixcoac', 'Coyoacan', 'CDMX'),
+                         (0, 'Joaquin', 'Lopez', 'Camargo', 'XAXA800101HQTRNZ01', '2008-01-01', 1265489002, 'lopez.j@cecyteq.com', 'Saucez', '52', 'Principe', 'Atlacomulco', 'Puebla');
