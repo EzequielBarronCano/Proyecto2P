@@ -21,3 +21,53 @@ insert into alumno values(0, 'Carlos', 'Montes', 'Juarez', 'XAXA500101HQTRNZ01',
                          (0, 'Diana', 'Jimenez', 'Rojas', 'XAXA600101HQTRNZ01', '2008-09-23', 3324567800, 'jimenez.d@yahoo.com', 'Aldama', '12A', 'El Chamizal', 'Pedro Escobedo', 'Queretaro'),
                          (0, 'Xavier', 'Lopez', 'Chabelo', 'XAXA700101HQTRNZ01', '2007-11-21', 9845327690, 'lopez.x@gmail.com', 'Nacozari', '143', 'Mixcoac', 'Coyoacan', 'CDMX'),
                          (0, 'Joaquin', 'Lopez', 'Camargo', 'XAXA800101HQTRNZ01', '2008-01-01', 1265489002, 'lopez.j@cecyteq.com', 'Saucez', '52', 'Principe', 'Atlacomulco', 'Puebla');
+
+create table docente(
+    rfc int primary key auto_increment,
+    curp_doc varchar(18) not null default 'AXAX000101HQTRNZ01',
+    nom_doc varchar(50) not null default 'NOMBRE',
+    ap_paterno varchar(100) not null default 'AP_PATERNO',
+    ap_materno varchar(100) not null default 'AP_MATERNO',
+    turno varchar(10) not null default 'NOCTURNO',
+    n_tel_doc bigint(10) not null default'9876543210',
+    e_mail_doc varchar(30) not null default 'docente@email.com',
+    calle varchar(50),
+    num varchar(5),
+    colonia varchar(50),
+    municipio varchar(50),
+    estado varchar(50)
+);
+
+/* Insertar datos a la tabla Docente */
+insert into docente values(0, 'MARE861011HQTRNZ01', 'Emilio', 'Martinez', 'Rodriguez', 'Matutino', 1234567089, 'martinez.e@hotmail.com', 'Veracruz', '345', 'Estados', 'Las Choapas', 'Oaxaca'),
+                          (0, 'ALFA441212MQTRNV65', 'Angelica', 'Alvarez', 'Flores', 'Vespertino', 0123456789, 'alvarez.a@hotmail.com', 'Fidencio', '45', 'Revolucion', 'Ixmiquilpan', 'Hidalgo'),
+                          (0, 'BARE100925HQTRNAC4', 'Eduardo', 'Bailon', 'Rangel', 'Nocturno', 9087345612, 'bailon.e@hotmail.com', 'Norte', '5', 'Emiliano Zapata', 'Arriaga', 'Chiapas'),
+                          (0, 'AXAX000101HQTRNZ01', 'Carlos', 'Montes', 'Juarez', 'Mixto', 4356987328, 'montes.c@hotmail.com', 'Independencia', '45', 'Revolucion', 'Tequisquiapan', 'Queretaro');
+
+
+create table especialidad(
+    id_especialidad int primary key auto_increment,
+    n_especialidad varchar(50) not null default'ESPECIALIDAD',
+    tipo_especialidad varchar(30),
+    descripcion varchar(100) not null default 'ESPECIALIDAD SIN ESPECIFICAR',
+    aula varchar(5) not null default 'A1'
+);
+
+/* Insertar datos a la tabla Especialidad */
+insert into especialidad values (0, 'Tecnico en Programacion', 'Fisico - Matematica', 'La carrera de Tecnico en Programacion ofrece las...', 'Lab A' ),
+                                (0, 'Tecnico en Logistica', 'Economico - Administrativa', 'La carrera de Tecnico en Logistica permite al...', 'A3'),
+                                (0, 'Tecnico en Electricidad', 'Fisico - Matematica', 'La carrera de Tecnico en Electricidad permite que...', 'ER1');
+
+
+create table materia(
+    id_materia int primary key auto_increment,
+    n_materia varchar(50) not null default'MATERIA',
+    h_materia int not null default 3,
+    tipo_materia varchar(50),
+    descripcion varchar(100) not null default 'MATERIA SIN ESPECIFICAR'
+);
+
+/* Insertar datos a la tabla Materia */
+insert into materia values(0, 'Algebra', 4, 'Tronco comun', 'En Algebra se aprenden las bases matemáticas para que los...'),
+                          (0, 'Ingles V', 5, 'Formacion Propedeutica', 'En el idioma Ingles se escriben la mayoria de los codigos de programacion...'),
+                          (0, 'TEL M1SI Diseña instalaciones electricas', 7, 'Formacion Profesional', 'Los modulos de especialidad dotan al...');
